@@ -1,4 +1,4 @@
-/* global createButton, createCanvas, createCapture, VIDEO, background, text, height, brain, save, image */
+/* global createButton, createCanvas, createCapture, VIDEO, background, text, brain, save, image */
 // Proce55ing
 // p5
 
@@ -7,7 +7,6 @@ function makeEyes () {
   // VIDEO is your webcam
   // createCapture(VIDEO) records your webcam
   brain.eyes = createCapture(VIDEO)
-  brain.eyes.hide()
 }
 
 function makeMouth () {
@@ -30,7 +29,10 @@ function speak () {
   // 1. What color to fill with - white (255)
   background(255)
 
-  // Draw the camera
+  // Hide the uncontrollable video
+  brain.eyes.hide()
+
+  // Draw the controllable video
   // 1. What to draw - webcam (brain.eyes)
   // 2. How far to the right - all the way on the left (0)
   // 3. How far from the top - all the way at the top (0)
@@ -42,10 +44,10 @@ function speak () {
   // 1. What text to show - Up, Down, Up, Down, etc. (brain.goal)
   // 2. How far to the right - all the way to the left (0)
   // 3. How far from the top - 50 pixels up from the bottom (50)
-  text(brain.goal, 0, height - 50)
+  text(brain.goal, 0, 500)
 
   // Draw the status
-  text(brain.status, 0, height - 30)
+  text(brain.status, 0, 520)
 }
 
 window.draw = speak

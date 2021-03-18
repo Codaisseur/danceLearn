@@ -50,6 +50,7 @@ function guess (error, result) {
   if (error) {
     console.log(error)
   } else {
+    // console.log('result test:', result)
     // Show the user - Up or Down?
     brain.guess = result[0].label
 
